@@ -1,0 +1,6 @@
+{
+  "name": "CatapultAI",
+  "description": "Autonomous business intelligence systems that drive sustainable growth through strategy-led automation.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
