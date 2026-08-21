@@ -15,7 +15,6 @@ export function CatapultLogo({ showText = true, className = '' }: CatapultLogoPr
         strokeWidth="2.5"
         strokeLinecap="round"
         strokeLinejoin="round"
-        referrerPolicy="no-referrer"
       >
         {/* Trajectory Parabolic Dotted Arc */}
         <path

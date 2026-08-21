@@ -134,6 +134,9 @@ export function CostComparison() {
               </p>
             </div>
           </div>
+          <p className="text-[10px] text-zinc-600 font-sans text-center mt-6 italic">
+            *Estimate based on average team salaries and standard software licensing. Actual savings vary by business.
+          </p>
         </div>
 
         {/* Standard side-by-side Progress Cards */}
@@ -181,9 +184,9 @@ export function CostComparison() {
             </div>
 
             <div className="mt-12 pt-6 border-t border-[#1f1f23]">
-              <p className="text-[10px] font-sans text-zinc-500 uppercase tracking-[2px]">Total Cost of Ownership:</p>
+              <p className="text-[10px] font-sans text-zinc-500 uppercase tracking-[2px]">Estimated Cost of Ownership:</p>
               <div className="text-2.5xl sm:text-3xl font-light text-zinc-300 mt-2 tracking-tight">
-                ₹85L+ <span className="text-xs text-zinc-500 font-normal">/ first year</span>
+                ₹85L+ <span className="text-xs text-zinc-500 font-normal">/ first year*</span>
               </div>
             </div>
           </motion.div>
