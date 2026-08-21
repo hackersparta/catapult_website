@@ -3,24 +3,26 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
+import { Routes, Route } from 'react-router-dom';
 import { Header } from './components/Header';
-import { Hero } from './components/Hero';
-import { Friction } from './components/Friction';
-import { CostComparison } from './components/CostComparison';
-import { StrategyJourney } from './components/StrategyJourney';
-import { SystemServices } from './components/SystemServices';
-import { CaseStudy } from './components/CaseStudy';
-import { FinalCTA } from './components/FinalCTA';
 import { Footer } from './components/Footer';
 import { OfflineIndicator } from './components/OfflineIndicator';
 import { ThemeProvider } from './components/ThemeContext';
+import { ScrollManager } from './components/ScrollManager';
+import { MobileStickyCTA } from './components/MobileStickyCTA';
+import { HomePage } from './pages/HomePage';
+import { GrowthJourneyPage } from './pages/GrowthJourneyPage';
+import { WhatsAppIntelligencePage } from './pages/WhatsAppIntelligencePage';
+import { CrmPage } from './pages/CrmPage';
 
 export default function App() {
   return (
     <ThemeProvider>
       {/* Scrollable Layout Canvas */}
       <div className="min-h-screen bg-[#0a0a0b] text-zinc-150 antialiased transition-colors duration-300 relative overflow-hidden">
-        
+
+        <ScrollManager />
+
         {/* Floating Headers and menus */}
         <Header />
 
@@ -31,34 +33,21 @@ export default function App() {
           <div className="absolute top-[70%] left-[2%] w-[500px] h-[500px] bg-brand-primary/4 rounded-full filter blur-[160px]" />
         </div>
 
-        {/* Modular Sections stacked with smooth rhythm */}
+        {/* Routed page content */}
         <main className="relative">
-          
-          {/* Section 1: Hero area with dynamic cognitive connectivity graphics */}
-          <Hero />
-
-          {/* Section 2: Bottlenecks Friction points & precise overlay tooltips */}
-          <Friction />
-
-          {/* Section 3: Cost Comparison graphs + Live Calculators */}
-          <CostComparison />
-
-          {/* Section 4: Vertical Timeline strategy + orbit connections */}
-          <StrategyJourney />
-
-          {/* Section 5: Bento capability modules buildout */}
-          <SystemServices />
-
-          {/* Section 6: ROI Healthcare Case Study + active Counters */}
-          <CaseStudy />
-
-          {/* Section 7: Final interactive booking CTA and WhatsApp formatting */}
-          <FinalCTA />
-
+          <Routes>
+            <Route path="/" element={<HomePage />} />
+            <Route path="/growth-journey" element={<GrowthJourneyPage />} />
+            <Route path="/whatsapp-intelligence" element={<WhatsAppIntelligencePage />} />
+            <Route path="/crm" element={<CrmPage />} />
+          </Routes>
         </main>
 
         {/* Corporate footer details */}
         <Footer />
+
+        {/* Sticky mobile conversion bar */}
+        <MobileStickyCTA />
 
         {/* Offline notification & connectivity metrics overlays */}
         <OfflineIndicator />

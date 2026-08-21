@@ -3,24 +3,33 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-import { Mail, MapPin, Twitter, Compass, MessageSquareCode } from 'lucide-react';
+import { ReactNode } from 'react';
+import { Link } from 'react-router-dom';
+import { Mail, MapPin, MessageCircle, Compass, MessageSquareCode } from 'lucide-react';
 import { CatapultLogo } from './CatapultLogo';
 
+function FooterLink({ href, children }: { href: string; children: ReactNode }) {
+  const isInternal = href.startsWith('/') && !href.includes('#');
+  if (isInternal) {
+    return <Link to={href}>{children}</Link>;
+  }
+  return <a href={href} target={href.startsWith('http') ? '_blank' : undefined} rel={href.startsWith('http') ? 'noreferrer' : undefined}>{children}</a>;
+}
+
 export function Footer() {
-  const currentYear = 2026;
+  const currentYear = new Date().getFullYear();
 
   const platformLinks = [
-    { label: 'System Status', href: '#' },
-    { label: 'Security Protocols', href: '#' },
-    { label: 'Enterprise Careers', href: '#' },
-    { label: 'Case Studies', href: '#results' },
+    { label: 'Growth Journey', href: '/growth-journey' },
+    { label: 'WhatsApp Intelligence', href: '/whatsapp-intelligence' },
+    { label: 'CRM System', href: '/crm' },
+    { label: 'Case Studies', href: '/#results' },
   ];
 
   const legalLinks = [
-    { label: 'Privacy Policy', href: '#' },
-    { label: 'Terms of Service', href: '#' },
-    { label: 'Contact Support', href: '#' },
-    { label: 'Documentation', href: '#' },
+    { label: 'Book a Free Audit', href: '/#cta' },
+    { label: 'Contact Support', href: 'mailto:support@catapultai.in' },
+    { label: 'WhatsApp Us', href: 'https://wa.me/919655170886' },
   ];
 
   return (
@@ -36,9 +45,9 @@ export function Footer() {
             
             {/* Corporate Profile Column */}
             <div className="lg:col-span-5 space-y-6">
-              <a href="#" className="pb-1 block">
+              <Link to="/" className="pb-1 block">
                 <CatapultLogo />
-              </a>
+              </Link>
               <p className="text-zinc-500 font-light text-sm max-w-sm leading-relaxed">
                 Pioneering autonomous business intelligence systems that drive sustainable digital growth through strategy-led workflow automation.
               </p>
@@ -70,33 +79,35 @@ export function Footer() {
                 <ul className="space-y-4">
                   {platformLinks.map((link) => (
                     <li key={link.label}>
-                      <a 
+                      <FooterLink
                         href={link.href}
-                        className="text-zinc-400 hover:text-white hover:translate-x-1 transition-all inline-flex items-center gap-1.5 text-xs font-light"
                       >
-                        <Compass className="w-3.5 h-3.5 text-brand-primary/45" />
-                        {link.label}
-                      </a>
+                        <span className="text-zinc-400 hover:text-white hover:translate-x-1 transition-all inline-flex items-center gap-1.5 text-xs font-light">
+                          <Compass className="w-3.5 h-3.5 text-brand-primary/45" />
+                          {link.label}
+                        </span>
+                      </FooterLink>
                     </li>
                   ))}
                 </ul>
               </div>
 
-              {/* Column B (Legal & Support) */}
+              {/* Column B (Support) */}
               <div className="space-y-6">
                 <h4 className="font-sans text-[10px] uppercase tracking-[3px] text-brand-primary font-bold">
-                  Legal &amp; Support
+                  Support
                 </h4>
                 <ul className="space-y-4">
                   {legalLinks.map((link) => (
                     <li key={link.label}>
-                      <a 
+                      <FooterLink
                         href={link.href}
-                        className="text-zinc-400 hover:text-white hover:translate-x-1 transition-all inline-flex items-center gap-1.5 text-xs font-light"
                       >
-                        <MessageSquareCode className="w-3.5 h-3.5 text-brand-primary/45" />
-                        {link.label}
-                      </a>
+                        <span className="text-zinc-400 hover:text-white hover:translate-x-1 transition-all inline-flex items-center gap-1.5 text-xs font-light">
+                          <MessageSquareCode className="w-3.5 h-3.5 text-brand-primary/45" />
+                          {link.label}
+                        </span>
+                      </FooterLink>
                     </li>
                   ))}
                 </ul>
@@ -113,14 +124,14 @@ export function Footer() {
             </p>
             
             <div className="flex gap-4">
-              <a 
-                href="https://twitter.com" 
-                target="_blank" 
+              <a
+                href="https://wa.me/919655170886"
+                target="_blank"
                 rel="noreferrer"
                 className="w-8 h-8 rounded-none border border-[#1f1f23] bg-zinc-950/20 flex items-center justify-center text-zinc-400 hover:text-brand-primary hover:border-brand-primary/45 transition-all"
-                aria-label="Find CatapultAI on Twitter/X"
+                aria-label="Chat with CatapultAI on WhatsApp"
               >
-                <Twitter className="w-3.5 h-3.5 fill-current text-white" />
+                <MessageCircle className="w-3.5 h-3.5 text-white" />
               </a>
             </div>
           </div>

@@ -42,3 +42,13 @@ export interface CaseStudyData {
   content: string;
   stats: StatItem[];
 }
+
+export interface DoorData {
+  number: number;
+  badge: string;
+  title: string;
+  description: string;
+  problems: string[];
+  builds: { title: string; description: string; iconName: string }[];
+  results: string[];
+}
