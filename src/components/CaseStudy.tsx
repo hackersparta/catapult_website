@@ -21,7 +21,6 @@ export function CaseStudy() {
     ]
   };
 
-  // We can write a simple component to handle live counting for the 100% stat
   const percentVal = useMotionValue(0);
   const percentDisplay = useTransform(percentVal, (latest) => Math.round(latest) + '%');
 
@@ -35,19 +34,19 @@ export function CaseStudy() {
   }, [percentVal]);
 
   return (
-    <section className="py-24 relative overflow-hidden bg-[#0a0a0b] border-t border-[#1f1f23]" id="results">
+    <section className="py-24 relative overflow-hidden bg-bg-deep border-t border-surface-border" id="results">
       {/* Aurora glow */}
       <div className="absolute top-[20%] right-[10%] w-[500px] h-[500px] bg-brand-primary/5 rounded-full filter blur-[150px] pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-6 md:px-10 relative">
-        
+
         {/* Title sections */}
         <div className="text-center max-w-3xl mx-auto mb-20 space-y-4">
           <span className="font-sans text-[10px] uppercase tracking-[4px] text-brand-primary font-medium">Valid Proof</span>
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-sans font-light tracking-[-1px] text-white">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-sans font-light tracking-[-1px] text-fg">
             Real <span className="font-serif italic text-brand-primary">results</span>
           </h2>
-          <p className="text-zinc-500 text-sm sm:text-base leading-relaxed font-light">
+          <p className="text-fg-muted text-sm sm:text-base leading-relaxed font-light">
             No empty claims. Real enterprise-level performance metrics built on optimized cognitive system logic.
           </p>
         </div>
@@ -58,7 +57,7 @@ export function CaseStudy() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.2 }}
           transition={{ duration: 0.8 }}
-          className="glass-panel p-8 sm:p-12 md:p-16 rounded-none bg-[#121214]/45 relative overflow-hidden shadow-2xl border border-[#1f1f23]"
+          className="glass-panel p-8 sm:p-12 md:p-16 rounded-none bg-bg-surface/45 relative overflow-hidden shadow-2xl border border-surface-border"
         >
           {/* Subtle colored accent glow inside box */}
           <div className="absolute top-0 right-0 w-80 h-80 bg-brand-primary/5 rounded-full filter blur-[120px] pointer-events-none" />
@@ -69,68 +68,68 @@ export function CaseStudy() {
               <span className="p-1 px-3 border border-brand-primary/25 text-brand-primary text-[10px] font-sans font-medium tracking-widest uppercase bg-brand-primary/5">
                 {caseStudy.tag}
               </span>
-              <span className="flex items-center gap-1.5 text-[9px] text-[#ebd382] font-sans uppercase tracking-widest bg-brand-primary/5 border border-brand-primary/20 px-2.5 py-0.5 font-bold">
+              <span className="flex items-center gap-1.5 text-[9px] text-brand-secondary font-sans uppercase tracking-widest bg-brand-primary/5 border border-brand-primary/20 px-2.5 py-0.5 font-bold">
                 <CheckCircle2 className="w-3 h-3 text-brand-primary" /> Verifiable ROI
               </span>
             </div>
 
             {/* Title & Copy */}
-            <h3 className="text-2xl sm:text-3.5xl font-sans font-light text-white tracking-snug leading-tight">
+            <h3 className="text-2xl sm:text-3.5xl font-sans font-light text-fg tracking-snug leading-tight">
               {caseStudy.title}
             </h3>
 
-            <p className="text-zinc-500 text-sm sm:text-base leading-relaxed font-sans font-light">
+            <p className="text-fg-muted text-sm sm:text-base leading-relaxed font-sans font-light">
               {caseStudy.content}
             </p>
 
             {/* Metrics stat grid layout */}
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-8 pt-8 border-t border-[#1f1f23]">
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-8 pt-8 border-t border-surface-border">
               {/* Stat 1 */}
               <div className="space-y-2 group/stat">
                 <div className="flex items-center gap-2">
                   <Award className="w-4 h-4 text-brand-primary" />
-                  <span className="text-[10px] font-sans text-zinc-500 uppercase tracking-widest">Dynamic SLA</span>
+                  <span className="text-[10px] font-sans text-fg-muted uppercase tracking-widest">Dynamic SLA</span>
                 </div>
-                <div className="text-3xl sm:text-4xl font-light text-[#ebd382] font-sans tracking-tight group-hover/stat:translate-x-1 transition-transform">
+                <div className="text-3xl sm:text-4xl font-light text-brand-secondary font-sans tracking-tight group-hover/stat:translate-x-1 transition-transform">
                   24/7
                 </div>
-                <p className="text-xs text-zinc-400 font-medium tracking-wide uppercase">Bot Replies</p>
+                <p className="text-xs text-fg-secondary font-medium tracking-wide uppercase">Bot Replies</p>
               </div>
 
               {/* Stat 2 (Interactive count animation) */}
               <div className="space-y-2 group/stat">
                 <div className="flex items-center gap-2">
                   <TrendingUp className="w-4 h-4 text-brand-primary" />
-                  <span className="text-[10px] font-sans text-zinc-500 uppercase tracking-widest">Acquisition</span>
+                  <span className="text-[10px] font-sans text-fg-muted uppercase tracking-widest">Acquisition</span>
                 </div>
-                <motion.div className="text-3xl sm:text-4xl font-light text-[#ebd382] font-sans tracking-tight group-hover/stat:translate-x-1 transition-transform">
+                <motion.div className="text-3xl sm:text-4xl font-light text-brand-secondary font-sans tracking-tight group-hover/stat:translate-x-1 transition-transform">
                   <motion.span>{percentDisplay}</motion.span>
                 </motion.div>
-                <p className="text-xs text-zinc-400 font-medium tracking-wide uppercase">Leads Captured</p>
+                <p className="text-xs text-fg-secondary font-medium tracking-wide uppercase">Leads Captured</p>
               </div>
 
               {/* Stat 3 */}
               <div className="space-y-2 group/stat">
                 <div className="flex items-center gap-2">
                   <Users className="w-4 h-4 text-brand-primary" />
-                  <span className="text-[10px] font-sans text-zinc-500 uppercase tracking-widest">Loyalty Loop</span>
+                  <span className="text-[10px] font-sans text-fg-muted uppercase tracking-widest">Loyalty Loop</span>
                 </div>
-                <div className="text-3xl sm:text-4xl font-light text-[#ebd382] font-sans tracking-tight group-hover/stat:translate-x-1 transition-transform">
+                <div className="text-3xl sm:text-4xl font-light text-brand-secondary font-sans tracking-tight group-hover/stat:translate-x-1 transition-transform">
                   Auto
                 </div>
-                <p className="text-xs text-zinc-400 font-medium tracking-wide uppercase">Follow-ups</p>
+                <p className="text-xs text-fg-secondary font-medium tracking-wide uppercase">Follow-ups</p>
               </div>
 
               {/* Stat 4 */}
               <div className="space-y-2 group/stat">
                 <div className="flex items-center gap-2">
                   <Award className="w-4 h-4 text-brand-primary" />
-                  <span className="text-[10px] font-sans text-zinc-500 uppercase tracking-widest">Unified Grid</span>
+                  <span className="text-[10px] font-sans text-fg-muted uppercase tracking-widest">Unified Grid</span>
                 </div>
-                <div className="text-3xl sm:text-4xl font-light text-[#ebd382] font-sans tracking-tight group-hover/stat:translate-x-1 transition-transform">
+                <div className="text-3xl sm:text-4xl font-light text-brand-secondary font-sans tracking-tight group-hover/stat:translate-x-1 transition-transform">
                   CRM
                 </div>
-                <p className="text-xs text-zinc-400 font-medium tracking-wide uppercase">All Patients Tracked</p>
+                <p className="text-xs text-fg-secondary font-medium tracking-wide uppercase">All Patients Tracked</p>
               </div>
             </div>
 

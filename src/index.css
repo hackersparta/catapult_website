@@ -3,25 +3,82 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap');
 
 @theme {
+  /* Background surfaces */
   --color-bg-deep: #0a0a0b;
   --color-bg-surface: #121214;
   --color-bg-elevated: #1a1a1c;
-  
+
+  /* Foreground / text */
+  --color-fg: #ffffff;
+  --color-fg-secondary: #a1a1aa;
+  --color-fg-muted: #71717a;
+  --color-fg-dim: #52525b;
+  --color-on-surface-variant: #d4d4d8;
+
+  /* Brand palette */
   --color-brand-primary: #d4af37;
   --color-brand-primary-container: #d4af37;
   --color-brand-secondary: #ebd382;
   --color-brand-secondary-container: #d4af37;
   --color-brand-tertiary: #d4af37;
   --color-brand-error: #ef5858;
-  --color-glass-border: rgba(212, 175, 55, 0.12);
+  --color-brand-success: #22c55e;
 
+  /* Borders */
+  --color-glass-border: rgba(212, 175, 55, 0.12);
+  --color-surface-border: #1f1f23;
+  --color-surface-border-alt: #27272a;
+
+  /* Component surfaces */
+  --color-bar-inactive: #3f3f46;
+  --color-track-bg: #18181b;
+  --color-input-bg: #0a0a0b;
+
+  /* Typography */
   --font-sans: "Inter", "Helvetica Neue", Helvetica, Arial, sans-serif;
   --font-serif: "Georgia", Cambria, "Times New Roman", Times, serif;
   --font-mono: "JetBrains Mono", ui-monospace, monospace;
 
+  /* Animations */
   --animate-pulse-slow: pulse 6s cubic-bezier(0.4, 0, 0.6, 1) infinite;
   --animate-float-slow: float 8s ease-in-out infinite;
   --animate-float-medium: float 5s ease-in-out infinite;
+}
+
+/* ═══════════════════════════════════════════
+   LIGHT THEME — Premium Ivory / Gold / Charcoal
+   ═══════════════════════════════════════════ */
+.light {
+  /* Background surfaces */
+  --color-bg-deep: #FAF8F2;
+  --color-bg-surface: #FFFDF8;
+  --color-bg-elevated: #FFFFFF;
+
+  /* Foreground / text */
+  --color-fg: #171717;
+  --color-fg-secondary: #5F5A50;
+  --color-fg-muted: #7A7466;
+  --color-fg-dim: #9C9588;
+  --color-on-surface-variant: #3D3A34;
+
+  /* Brand palette (refined gold, not flashy) */
+  --color-brand-primary: #C9A227;
+  --color-brand-primary-container: #C9A227;
+  --color-brand-secondary: #A8841C;
+  --color-brand-secondary-container: #C9A227;
+  --color-brand-tertiary: #C9A227;
+  --color-brand-error: #B42318;
+  --color-brand-success: #2E7D5B;
+
+  /* Borders */
+  --color-glass-border: rgba(201, 162, 39, 0.18);
+  --color-surface-border: #E5DDC8;
+  --color-surface-border-alt: #D9D0B8;
+
+  /* Component surfaces */
+  --color-bar-inactive: #E5DDC8;
+  --color-track-bg: #F0EBE0;
+  --color-input-bg: #FFFDF8;
 }
 
 @layer utilities {
@@ -61,7 +118,48 @@
   }
 }
 
-/* Base resets & styles */
+/* ═══════════════════════════════════════════
+   LIGHT THEME — Component overrides
+   ═══════════════════════════════════════════ */
+.light .glass-panel {
+  background: rgba(255, 253, 248, 0.82);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid #E5DDC8;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04), 0 4px 12px rgba(201, 162, 39, 0.04);
+}
+
+.light .text-gradient {
+  background: linear-gradient(135deg, #171717 0%, #8A6D15 50%, #C9A227 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.light .text-gradient-purple {
+  background: linear-gradient(135deg, #171717 0%, #C9A227 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.light .text-gradient-cyan {
+  background: linear-gradient(135deg, #A8841C 0%, #C9A227 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.light .text-gradient-green {
+  background: linear-gradient(135deg, #171717 0%, #A8841C 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* ═══════════════════════════════════════════
+   Base resets & styles
+   ═══════════════════════════════════════════ */
 html {
   scroll-behavior: smooth;
   height: 100%;
@@ -70,44 +168,23 @@ html {
 body {
   margin: 0;
   padding: 0;
-  background-color: #0a0a0b;
-  color: #a1a1aa;
+  background-color: var(--color-bg-deep);
+  color: var(--color-fg-secondary);
   overflow-x: hidden;
   font-family: var(--font-sans);
   min-height: 100%;
   transition: background-color 0.4s ease, color 0.4s ease;
 }
 
-/* Light theme overrides if .light is active */
-.light body {
-  background-color: #f7f7f8;
-  color: #1c1c1e;
-}
-
-.light .glass-panel {
-  background: rgba(255, 255, 255, 0.8);
-  backdrop-filter: blur(16px);
-  border: 1px solid rgba(212, 175, 55, 0.25);
-}
-
-.light .text-gradient {
-  background: linear-gradient(135deg, #1c1c1e 0%, #7d6418 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-}
-
-/* Custom Scrollbar */
+/* ═══════════════════════════════════════════
+   Custom Scrollbar
+   ═══════════════════════════════════════════ */
 ::-webkit-scrollbar {
   width: 8px;
 }
 
 ::-webkit-scrollbar-track {
-  background: #0a0a0b;
-}
-
-.light ::-webkit-scrollbar-track {
-  background: #f7f7f8;
+  background: var(--color-bg-deep);
 }
 
 ::-webkit-scrollbar-thumb {
@@ -119,7 +196,28 @@ body {
   background: rgba(212, 175, 55, 0.4);
 }
 
-/* Keyframe animations */
+.light ::-webkit-scrollbar-thumb {
+  background: rgba(201, 162, 39, 0.25);
+}
+
+.light ::-webkit-scrollbar-thumb:hover {
+  background: rgba(201, 162, 39, 0.45);
+}
+
+/* ═══════════════════════════════════════════
+   Light theme — Range input styling
+   ═══════════════════════════════════════════ */
+.light input[type="range"] {
+  background: #E5DDC8;
+}
+
+.light input[type="range"]::-webkit-slider-thumb {
+  background: #C9A227;
+}
+
+/* ═══════════════════════════════════════════
+   Keyframe animations
+   ═══════════════════════════════════════════ */
 @keyframes float {
   0% {
     transform: translateY(0px);

@@ -41,30 +41,30 @@ export function Friction() {
   };
 
   return (
-    <section className="py-24 relative overflow-hidden bg-[#0a0a0b]" id="what-we-do">
+    <section className="py-24 relative overflow-hidden bg-bg-deep" id="what-we-do">
       {/* Decorative background grid blur */}
       <div className="absolute inset-0 bg-gradient-to-b from-transparent via-brand-primary/5 to-transparent pointer-events-none -z-10" />
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[350px] bg-brand-primary/5 rounded-full filter blur-[140px] pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-6 md:px-10 relative">
-        
+
         {/* Title information */}
         <div className="text-center max-w-3xl mx-auto mb-20 space-y-4">
-          <motion.h2 
+          <motion.h2
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.3 }}
             transition={{ duration: 0.8 }}
-            className="text-3xl sm:text-4xl md:text-5xl font-sans font-light tracking-[-1px] text-white"
+            className="text-3xl sm:text-4xl md:text-5xl font-sans font-light tracking-[-1px] text-fg"
           >
             The friction holding <span className="font-serif italic text-brand-primary">your business</span> back.
           </motion.h2>
-          <motion.p 
+          <motion.p
             initial={{ opacity: 0, y: 15 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.3 }}
             transition={{ duration: 0.8, delay: 0.1 }}
-            className="text-zinc-500 text-sm sm:text-base leading-relaxed"
+            className="text-fg-muted text-sm sm:text-base leading-relaxed"
           >
             Traditional workflows are designed for a slower era. AI removes administrative friction so you operate with ultimate precision.
           </motion.p>
@@ -80,7 +80,7 @@ export function Friction() {
               viewport={{ once: true, amount: 0.2 }}
               transition={{ duration: 0.7, delay: idx * 0.15, ease: [0.23, 1, 0.32, 1] }}
               whileHover={{ y: -6 }}
-              className="group relative glass-panel p-8 rounded-none border border-[#1f1f23] hover:border-brand-primary/45 bg-[#121214]/40 transition-all duration-300 shadow-xl overflow-visible"
+              className="group relative glass-panel p-8 rounded-none border border-surface-border hover:border-brand-primary/45 bg-bg-surface/40 transition-all duration-300 shadow-xl overflow-visible"
             >
               {/* Header inside friction card */}
               <div className="flex justify-between items-start mb-6">
@@ -89,17 +89,17 @@ export function Friction() {
                     0{idx + 1} / Bottleneck
                   </span>
                 </div>
-                
+
                 {/* Micro tooltip interactive bubble */}
                 <div className="relative flex items-center gap-2">
-                  <div className="p-2 border border-[#1f1f23] text-brand-primary">
+                  <div className="p-2 border border-surface-border text-brand-primary">
                     {getIcon(idx)}
                   </div>
                   <button
                     onMouseEnter={() => setActiveTooltip(idx)}
                     onMouseLeave={() => setActiveTooltip(null)}
                     onClick={() => setActiveTooltip(activeTooltip === idx ? null : idx)}
-                    className="p-1.5 border border-[#1f1f23] hover:border-brand-primary text-zinc-500 hover:text-white transition-all cursor-help"
+                    className="p-1.5 border border-surface-border hover:border-brand-primary text-fg-muted hover:text-fg transition-all cursor-help"
                     aria-label="More operational details"
                   >
                     <Info className="w-3.5 h-3.5" />
@@ -112,11 +112,10 @@ export function Friction() {
                         animate={{ opacity: 1, scale: 1, y: 0, x: -125 }}
                         exit={{ opacity: 0, scale: 0.95, y: -10, x: -125 }}
                         transition={{ duration: 0.15 }}
-                        className="absolute bottom-full left-1/2 mb-3 z-30 w-64 p-4 rounded-none bg-bg-elevated border border-brand-primary/20 backdrop-blur-md text-xs text-zinc-300 leading-relaxed shadow-2xl"
+                        className="absolute bottom-full left-1/2 mb-3 z-30 w-64 p-4 rounded-none bg-bg-elevated border border-brand-primary/20 backdrop-blur-md text-xs text-fg-secondary leading-relaxed shadow-2xl"
                       >
                         <div className="font-mono text-[9px] uppercase tracking-wider text-brand-primary mb-1">Analytical Impact</div>
                         {item.tooltip}
-                        {/* Little triangle cursor tail */}
                         <div className="absolute top-full left-1/2 -translate-x-1/2 -mt-1 border-4 border-transparent border-t-bg-elevated" />
                       </motion.div>
                     )}
@@ -125,17 +124,17 @@ export function Friction() {
               </div>
 
               {/* Title & description */}
-              <h3 className="text-lg sm:text-xl font-medium text-white mb-3 tracking-tight">
+              <h3 className="text-lg sm:text-xl font-medium text-fg mb-3 tracking-tight">
                 {item.title}
               </h3>
-              
-              <p className="text-zinc-500 text-sm leading-relaxed mb-6">
+
+              <p className="text-fg-muted text-sm leading-relaxed mb-6">
                 {item.description}
               </p>
 
               {/* Highlight Bottom Segment */}
-              <div className="flex items-center justify-between pt-4 border-t border-[#1f1f23]">
-                <span className="text-[10px] font-sans uppercase tracking-[1px] text-zinc-500">Estimated loss:</span>
+              <div className="flex items-center justify-between pt-4 border-t border-surface-border">
+                <span className="text-[10px] font-sans uppercase tracking-[1px] text-fg-muted">Estimated loss:</span>
                 <span className="text-xs font-mono font-bold text-brand-primary bg-brand-primary/5 px-2.5 py-1 border border-brand-primary/20">
                   {item.metric}
                 </span>

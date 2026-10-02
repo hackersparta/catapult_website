@@ -19,7 +19,7 @@ export default function App() {
   return (
     <ThemeProvider>
       {/* Scrollable Layout Canvas */}
-      <div className="min-h-screen bg-[#0a0a0b] text-zinc-150 antialiased transition-colors duration-300 relative overflow-hidden">
+      <div className="min-h-screen bg-bg-deep text-fg-secondary antialiased transition-colors duration-300 relative overflow-hidden">
 
         <ScrollManager />
 

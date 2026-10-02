@@ -42,9 +42,9 @@ export function OfflineIndicator() {
   return (
     <div className="fixed bottom-6 right-6 z-50">
       <div className={`flex items-center gap-2 px-4 py-3 rounded-none shadow-2xl backdrop-blur-md border ${
-        isOnline 
-          ? 'bg-brand-primary/5 border-brand-primary/30 text-brand-primary' 
-          : 'bg-red-950/15 border-red-800/30 text-red-450'
+        isOnline
+          ? 'bg-brand-primary/5 border-brand-primary/30 text-brand-primary'
+          : 'bg-red-950/15 border-red-800/30 text-brand-error'
       }`}>
         {isOnline ? (
           <>

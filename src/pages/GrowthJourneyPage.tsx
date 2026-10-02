@@ -13,7 +13,7 @@ export function GrowthJourneyPage() {
   return (
     <div>
       {/* Hero */}
-      <section className="relative pt-40 pb-16 overflow-hidden bg-[#0a0a0b]">
+      <section className="relative pt-40 pb-16 overflow-hidden bg-bg-deep">
         <div className="absolute top-1/4 left-1/2 -translate-x-1/2 w-[600px] h-[400px] bg-brand-primary/5 rounded-full filter blur-[150px] pointer-events-none" />
         <div className="max-w-5xl mx-auto px-6 md:px-10 relative text-center space-y-5">
           <motion.span
@@ -28,7 +28,7 @@ export function GrowthJourneyPage() {
             initial={{ opacity: 0, y: 15 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 0.1 }}
-            className="text-4xl sm:text-5xl md:text-6xl font-sans font-light tracking-[-1.5px] text-white leading-tight"
+            className="text-4xl sm:text-5xl md:text-6xl font-sans font-light tracking-[-1.5px] text-fg leading-tight"
           >
             Your Business Growth Journey <br className="hidden sm:block" />
             with <span className="font-serif italic text-brand-primary">Catapult AI</span>
@@ -37,7 +37,7 @@ export function GrowthJourneyPage() {
             initial={{ opacity: 0, y: 15 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 0.2 }}
-            className="text-zinc-500 text-sm sm:text-base font-light max-w-xl mx-auto leading-relaxed"
+            className="text-fg-muted text-sm sm:text-base font-light max-w-xl mx-auto leading-relaxed"
           >
             3 Doors. 1 Path. Unlimited Growth. From chaos to control — from control to growth.
           </motion.p>
@@ -53,13 +53,13 @@ export function GrowthJourneyPage() {
               <a
                 key={door.number}
                 href={`#door-${door.number}`}
-                className="flex-1 flex items-center justify-center gap-3 p-4 border border-[#1f1f23] bg-[#121214]/40 hover:bg-brand-primary/5 hover:border-brand-primary/40 transition-colors"
+                className="flex-1 flex items-center justify-center gap-3 p-4 border border-surface-border bg-bg-surface/40 hover:bg-brand-primary/5 hover:border-brand-primary/40 transition-colors"
               >
                 <span className="font-mono text-[10px] text-brand-primary uppercase tracking-[2px] font-semibold">
                   Door {door.number}
                 </span>
-                <span className="text-xs text-zinc-400 font-light">{door.badge}</span>
-                {idx < doors.length - 1 && <ArrowRight className="w-3.5 h-3.5 text-zinc-600 hidden sm:block ml-1" />}
+                <span className="text-xs text-fg-secondary font-light">{door.badge}</span>
+                {idx < doors.length - 1 && <ArrowRight className="w-3.5 h-3.5 text-fg-dim hidden sm:block ml-1" />}
               </a>
             ))}
           </motion.div>

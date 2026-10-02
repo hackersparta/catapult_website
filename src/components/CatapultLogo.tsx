@@ -60,10 +60,10 @@ export function CatapultLogo({ showText = true, className = '' }: CatapultLogoPr
       {/* Brand Typography adaptation from original image */}
       {showText && (
         <div className="flex flex-col text-left">
-          <span className="font-sans text-base font-semibold tracking-[4px] text-zinc-100 uppercase leading-none">
+          <span className="font-sans text-base font-semibold tracking-[4px] text-fg uppercase leading-none">
             CATAPULT<span className="text-brand-primary">AI</span>
           </span>
-          <span className="font-mono text-[8px] uppercase tracking-[1.5px] text-zinc-500 mt-1 leading-none font-medium">
+          <span className="font-mono text-[8px] uppercase tracking-[1.5px] text-fg-muted mt-1 leading-none font-medium">
             AI Automation Consultancy
           </span>
         </div>

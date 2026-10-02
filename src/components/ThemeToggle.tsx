@@ -12,7 +12,7 @@ export function ThemeToggle() {
   return (
     <button
       onClick={toggleTheme}
-      className="p-2.5 rounded-none border border-[#1f1f23] bg-zinc-950/20 hover:bg-[#121214] hover:border-brand-primary/45 hover:text-brand-primary text-zinc-405 transition-all text-white hover:scale-105 active:scale-95 cursor-pointer relative overflow-hidden"
+      className="p-2.5 rounded-none border border-surface-border bg-bg-deep/20 hover:bg-bg-surface hover:border-brand-primary/45 hover:text-brand-primary text-fg transition-all hover:scale-105 active:scale-95 cursor-pointer relative overflow-hidden"
       aria-label="Toggle visual theme"
     >
       <div className="relative w-5 h-5">

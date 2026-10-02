@@ -77,7 +77,7 @@ export function Header() {
           <div className="relative" ref={solutionsRef}>
             <button
               onClick={() => setSolutionsOpen((v) => !v)}
-              className="flex items-center gap-1.5 text-zinc-400 hover:text-white hover:scale-105 active:scale-95 text-[11px] font-medium uppercase tracking-[2px] transition-all duration-200 relative group cursor-pointer"
+              className="flex items-center gap-1.5 text-fg-secondary hover:text-fg hover:scale-105 active:scale-95 text-[11px] font-medium uppercase tracking-[2px] transition-all duration-200 relative group cursor-pointer"
             >
               Solutions
               <ChevronDown className={`w-3 h-3 transition-transform duration-200 ${solutionsOpen ? 'rotate-180' : ''}`} />
@@ -85,7 +85,7 @@ export function Header() {
             </button>
 
             <div
-              className={`absolute top-full left-1/2 -translate-x-1/2 mt-4 w-64 bg-bg-surface/95 backdrop-blur-2xl border border-glass-border transition-all duration-300 ease-[cubic-bezier(0.23,1,0.32,1)] ${
+              className={`absolute top-full left-1/2 -translate-x-1/2 mt-4 w-64 bg-bg-surface/95 backdrop-blur-2xl border border-surface-border transition-all duration-300 ease-[cubic-bezier(0.23,1,0.32,1)] ${
                 solutionsOpen ? 'opacity-100 translate-y-0 visible' : 'opacity-0 -translate-y-2 invisible pointer-events-none'
               }`}
             >
@@ -94,7 +94,7 @@ export function Header() {
                   key={item.label}
                   to={item.href}
                   onClick={() => setSolutionsOpen(false)}
-                  className="block px-5 py-3.5 text-xs text-zinc-300 hover:text-white hover:bg-brand-primary/5 border-l-2 border-transparent hover:border-brand-primary transition-all"
+                  className="block px-5 py-3.5 text-xs text-fg-secondary hover:text-fg hover:bg-brand-primary/5 border-l-2 border-transparent hover:border-brand-primary transition-all"
                 >
                   {item.label}
                 </Link>
@@ -107,7 +107,7 @@ export function Header() {
               key={item.label}
               href={item.href}
               onClick={(e) => handleAnchorClick(e, item.href)}
-              className="text-zinc-400 hover:text-white hover:scale-105 active:scale-95 text-[11px] font-medium uppercase tracking-[2px] transition-all duration-200 relative group"
+              className="text-fg-secondary hover:text-fg hover:scale-105 active:scale-95 text-[11px] font-medium uppercase tracking-[2px] transition-all duration-200 relative group"
             >
               {item.label}
               <span className="absolute -bottom-1 left-0 w-0 h-[1px] bg-brand-primary group-hover:w-full transition-all duration-300"></span>
@@ -121,7 +121,7 @@ export function Header() {
           <a
             href="/#cta"
             onClick={(e) => handleAnchorClick(e, '/#cta')}
-            className="relative overflow-hidden border border-[#27272a] hover:border-brand-primary text-white hover:text-brand-primary font-sans text-[11px] font-medium uppercase tracking-[2px] py-2.5 px-6 transition-all duration-300 hover:scale-[1.03] active:scale-[0.97]"
+            className="relative overflow-hidden border border-surface-border-alt hover:border-brand-primary text-fg hover:text-brand-primary font-sans text-[11px] font-medium uppercase tracking-[2px] py-2.5 px-6 transition-all duration-300 hover:scale-[1.03] active:scale-[0.97]"
           >
             Contact
           </a>
@@ -132,7 +132,7 @@ export function Header() {
           <ThemeToggle />
           <button
             onClick={() => setIsOpen(!isOpen)}
-            className="p-2 text-on-surface-variant hover:text-white transition-colors"
+            className="p-2 text-on-surface-variant hover:text-fg transition-colors"
             aria-label="Toggle navigation drawer"
           >
             {isOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
@@ -151,7 +151,7 @@ export function Header() {
           <div className="border-b border-glass-border/35 pb-2">
             <button
               onClick={() => setMobileSolutionsOpen((v) => !v)}
-              className="w-full flex items-center justify-between text-lg font-medium text-on-surface-variant hover:text-white transition-all py-2"
+              className="w-full flex items-center justify-between text-lg font-medium text-on-surface-variant hover:text-fg transition-all py-2"
             >
               Solutions
               <ChevronDown className={`w-4 h-4 transition-transform duration-200 ${mobileSolutionsOpen ? 'rotate-180' : ''}`} />
@@ -162,7 +162,7 @@ export function Header() {
                   key={item.label}
                   to={item.href}
                   onClick={() => setIsOpen(false)}
-                  className="block pl-4 py-2.5 text-sm text-zinc-400 hover:text-white transition-colors"
+                  className="block pl-4 py-2.5 text-sm text-fg-secondary hover:text-fg transition-colors"
                 >
                   {item.label}
                 </Link>
@@ -175,7 +175,7 @@ export function Header() {
               key={item.label}
               href={item.href}
               onClick={(e) => handleAnchorClick(e, item.href)}
-              className="text-lg font-medium text-on-surface-variant hover:text-white hover:pl-2 transition-all duration-200 py-2 border-b border-glass-border/35"
+              className="text-lg font-medium text-on-surface-variant hover:text-fg hover:pl-2 transition-all duration-200 py-2 border-b border-glass-border/35"
             >
               {item.label}
             </a>

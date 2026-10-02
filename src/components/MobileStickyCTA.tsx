@@ -27,7 +27,7 @@ export function MobileStickyCTA() {
           href="https://wa.me/919655170886?text=Hi%2C%20I%20want%20a%20free%20business%20systems%20audit."
           target="_blank"
           rel="noopener noreferrer"
-          className="flex-shrink-0 w-11 h-11 flex items-center justify-center border border-[#27272a] text-brand-primary"
+          className="flex-shrink-0 w-11 h-11 flex items-center justify-center border border-surface-border-alt text-brand-primary"
           aria-label="Chat on WhatsApp"
         >
           <MessageCircle className="w-5 h-5" />
